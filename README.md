@@ -11,7 +11,7 @@ Tldr; If your receiver can use E6 corrections, and you’ve got some time (aroun
 
 Above are 78 tests of the UM980 GNSS receiver outputting the latitude deviation over time. In general the lower the deviation, the better the accuracy of the solution. Note that the UM980 was reset and hot-started after every test. The output was monitored for LLA deviations over time, as well as fix type. In general, the UM980 immediately had a 3D GNSS Fix, then a PPP converging solution, followed by a PPP convergence. Once the module achieved convergence, the device was immediately reset, and the process was started again. In the graph above we can see the majority of tests (except one) finished in under 1400 seconds. 
 
-![Start of convergence times](<SparkFun Galileo HAS E6 PPP Convergence - All plots Best Time Converging.png>)
+![Start of convergence times](<SparkFun Galileo HAS E6 PPP Convergence - All plots Initial Conditions.png>)
 
 *Start of convergence times*
 
