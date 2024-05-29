@@ -6,7 +6,7 @@
   License: MIT. Please see LICENSE.md for more information.
 
   This example shows how to setup the UM980 and to monitor the solution type for
-  a Galileo/HAS PPP based convergence solution. Only time, deviations, SIV, and 
+  a Galileo/HAS PPP based convergence solution. Only time, deviations, SIV, and
   solution type are output. If you need NMEA sentences or positional information,
   this is not the example you are looking for.
 
@@ -130,8 +130,7 @@ void printUpdate()
     }
 
     //Reset UM980
-      ESP.restart();
-//    startSystem(); //Setup UM980 and start timer
+    ESP.restart();
   }
   else Serial.print("Unknown,");
   Serial.println();
@@ -173,6 +172,12 @@ void startSystem()
   {
     Serial.println("Device not ready for E6. Freezing...");
     while (1);
+  }
+
+  if (myGNSS.isConfigurationPresent("CONFIG PPP ENABLE E6-HAS") == false)
+  {
+    if (myGNSS.sendCommand("CONFIG PPP ENABLE E6-HAS") == false)
+      Serial.println("Galileo E6 service config error");
   }
 
   Serial.println("seconds, lat deviation, lon, alt, siv, fix type,");
